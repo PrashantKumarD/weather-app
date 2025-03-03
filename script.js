@@ -597,9 +597,8 @@ function swiperswipping(date , time , temperature , pressure , humidity , wind ,
         swipeval.innerHTML += s;
         
     }
-    setTimeout(() => {
     swiper.update();
-}, 500);
+    
     
 }
 function avgtemp(temps){
