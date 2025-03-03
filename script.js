@@ -101,7 +101,7 @@ document.querySelector("#search-btn").addEventListener('click', function(event){
 });
 
 function getcity(cityname) {
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityname}&limit=4&appid=${API_KEY1}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityname}&limit=4&appid=${API_KEY1}`)
     .then(response => response.json())
     .then(data => {
         if (data.length > 0) {
@@ -149,7 +149,7 @@ function getweather(latitude, longitude ,cityname ,state,country) {
         
         let img1 = document.querySelector('.cur-img'); 
         let iconCode = weather_icon.trim(); 
-        img1.src = `http://openweathermap.org/img/wn/${iconCode}@2x.png`; 
+        img1.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`; 
         var headings = document.querySelectorAll('.row h3');
         headings[0].textContent = "Temp (°C): " + temperature_t;
         headings[1].textContent = "Pressure (hPa): " + pressure_t;
@@ -198,7 +198,7 @@ function convertUnixToTime(unixTimestamp, timezoneOffset) {
 }
 
 function reversegeocoding(latitude,longitude){
-    fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY1}`).then(response => response.json())
+    fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY1}`).then(response => response.json())
     .then(data => {
         let loc_name = data[0].name;
         let state_n = data[0].state;
@@ -227,7 +227,7 @@ function updatemarker([lat,lon],location,country){
 }
 
 function forecasting(lat, lon) {
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY1}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY1}&units=metric`)
     .then(response => response.json())
     .then(data => {
         let windspeedchart = []
@@ -579,7 +579,7 @@ function swiperswipping(date , time , temperature , pressure , humidity , wind ,
         var m =weather_name[i];
         let s = `
             <div class="swiper-slide">
-                    <img  class="img-pro" src="http://openweathermap.org/img/wn/${icon_w}@2x.png">
+                    <img  class="img-pro" src="https://openweathermap.org/img/wn/${icon_w}@2x.png">
                     <h1> ${m} </h1>  
                     <h2> Date : ${d} </h2>
                     <h2> Time : ${t} </h2>
