@@ -47,6 +47,8 @@ function updateWeatherLayer(url) {
         reuseTiles: true
     }).addTo(map);
 
+    map.setZoom(5);
+
     layerGroup([main_layer,weatherLayer]).addTo(map);
 }
 
