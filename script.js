@@ -183,6 +183,11 @@ if(navigator.geolocation){
 
     )
 }
+navigator.permissions.query({ name: "geolocation" }).then((result) => {
+    if (result.state === "denied") {
+        alert("Please enable location access in your browser settings!");
+    }
+});
 else {
     reversegeocoding(28.7041,77.1025);
     }
@@ -596,7 +601,9 @@ function swiperswipping(date , time , temperature , pressure , humidity , wind ,
         swipeval.innerHTML += s;
         
     }
+    setTimeout(() => {
     swiper.update();
+}, 500);
     
 }
 function avgtemp(temps){
