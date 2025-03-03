@@ -601,6 +601,9 @@ function swiperswipping(date , time , temperature , pressure , humidity , wind ,
     
     
 }
+setTimeout(() => {
+    swiper.update();
+}, 500);
 function avgtemp(temps){
 var avgtemp1=0;
 var minitemp=Infinity;
